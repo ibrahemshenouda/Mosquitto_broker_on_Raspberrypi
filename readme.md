@@ -28,17 +28,26 @@ Simple project that sends MQTT messages from a **Laptop (Ubuntu)** to a **Raspbe
 **1. Connect via SSH from your laptop:**
 
 ```bash
-ssh pi@192.168.1.8
+ssh username@raspi_ip
+or
+ssh username@hostname.local
 ```
 
-**2. Install Mosquitto broker (run `install_mosquitto.sh`):**
+**2. Create and activate a virtual environment:**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**3. Install Mosquitto broker (run `install_mosquitto.sh`):**
 
 ```bash
 chmod +x install_mosquitto.sh
 ./install_mosquitto.sh
 ```
 
-**3. Start listening for messages (run `subscriber.sh`):**
+**4. Start listening for messages (run `subscriber.sh`):**
 
 ```bash
 chmod +x subscriber.sh
@@ -136,4 +145,3 @@ raspi_mqtt_lab/
 ├── publisher.py           # Python MQTT publisher (runs on Laptop)
 └── README.md
 ```
-
